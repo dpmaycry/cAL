@@ -404,7 +404,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = cAL/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = DP.cAL;
+				PRODUCT_BUNDLE_IDENTIFIER = DPs.cAL;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -415,7 +415,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = cAL/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = DP.cAL;
+				PRODUCT_BUNDLE_IDENTIFIER = DPs.cAL;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
@@ -487,6 +487,7 @@
 				E20F64981C896E7700C662EE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		E20F64991C896E7700C662EE /* Build configuration list for PBXNativeTarget "cALTests" */ = {
 			isa = XCConfigurationList;
@@ -495,6 +496,7 @@
 				E20F649B1C896E7700C662EE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		E20F649C1C896E7700C662EE /* Build configuration list for PBXNativeTarget "cALUITests" */ = {
 			isa = XCConfigurationList;
@@ -503,6 +505,7 @@
 				E20F649E1C896E7700C662EE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
