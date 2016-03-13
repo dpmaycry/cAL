@@ -16,24 +16,50 @@ class ViewController: UIViewController {
         let num = sender.currentTitle!
         if isUserInMiddleOfTyping
         {
-            display.text = num
+            display.text = display.text! + num
         }else
         {
-            display.text = display.text! + num
+            display.text = num
+            isUserInMiddleOfTyping = true
         }
     }
+    var operandStack = Array<Double>()
     
-    @IBAction func enter(sender: UIButton) {
+    @IBAction func operate(sender: UIButton) {
+        let operation = sender.currentTitle!
+        if isUserInMiddleOfTyping {
+            enter()
+        }
+        switch operation  {
+        case "+":
+            if operandStack.count >= 2 {
+            displayvalue = operandStack.removeLast() * operandStack.removeLast()
+                enter()
+            }
+                break
+//        case "−":
+//        case "×":
+//        case "÷":
+        default: break
+        }
+    }
+    @IBAction func enter() {
+        isUserInMiddleOfTyping = false
+        operandStack.append(displayvalue)
+        print("operandstack:\(operandStack)")
+    }
+    
+    
+    var displayvalue: Double {
+        get {
+            
+            return NSNumberFormatter().numberFromString(display.text!)!.doubleValue
+        }
+        set {
+            display.text = "\(newValue)"
+            isUserInMiddleOfTyping = false
+        }
         
-    }
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-    }
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
     
