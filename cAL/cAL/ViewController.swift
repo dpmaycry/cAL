@@ -32,17 +32,43 @@ class ViewController: UIViewController {
         }
         switch operation  {
         case "+":
-            if operandStack.count >= 2 {
-            displayvalue = operandStack.removeLast() * operandStack.removeLast()
-                enter()
-            }
-                break
-//        case "−":
-//        case "×":
-//        case "÷":
+            performOperation{$0 + $1}
+        case "−":performOperation{$0 - $1}
+//        case "×": performOperation({(op1:Double, op2:Double) -> Double in
+//            return op1 * op2})
+//        case "×": performOperation({(op1, op2) in
+//            return op1 * op2})
+//        case "×": performOperation({(op1, op2) in
+//             op1 * op2})
+//        case "×": performOperation({$0 * $1})
+//            case "×": performOperation(){$0 * $1}
+            case "×": performOperation{$0 * $1}
+        case "÷":performOperation{$1 / $0}
+        case "√": sqrtOperation{sqrt($0)}
         default: break
         }
     }
+    
+    func performOperation(operation:(Double, Double) -> Double)
+    {
+        if operandStack.count >= 2 {
+        displayvalue = operation(operandStack.removeLast(), operandStack.removeLast())
+            enter()
+        }
+    }
+    
+    func sqrtOperation(operation: Double -> Double)
+    {
+        if operandStack.count >= 2 {
+            displayvalue = operation(operandStack.removeLast())
+            enter()
+        }
+    }
+    
+//    func multiply(op1:Double, op2:Double) -> Double {
+//    return op1 * op2
+//    }
+    
     @IBAction func enter() {
         isUserInMiddleOfTyping = false
         operandStack.append(displayvalue)
