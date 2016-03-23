@@ -59,7 +59,7 @@ class ViewController: UIViewController {
     
     func sqrtOperation(operation: Double -> Double)
     {
-        if operandStack.count >= 2 {
+        if operandStack.count >= 1 {
             displayvalue = operation(operandStack.removeLast())
             enter()
         }
