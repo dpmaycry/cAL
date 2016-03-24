@@ -14,6 +14,7 @@
 		E20F647C1C896E7700C662EE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E20F647A1C896E7700C662EE /* LaunchScreen.storyboard */; };
 		E20F64871C896E7700C662EE /* cALTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E20F64861C896E7700C662EE /* cALTests.swift */; };
 		E20F64921C896E7700C662EE /* cALUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E20F64911C896E7700C662EE /* cALUITests.swift */; };
+		E234C23E1CA2A5A4002DC306 /* CalculatorBrain.swift in Sources */ = {isa = PBXBuildFile; fileRef = E234C23D1CA2A5A4002DC306 /* CalculatorBrain.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,7 @@
 		E20F648D1C896E7700C662EE /* cALUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = cALUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E20F64911C896E7700C662EE /* cALUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = cALUITests.swift; sourceTree = "<group>"; };
 		E20F64931C896E7700C662EE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E234C23D1CA2A5A4002DC306 /* CalculatorBrain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalculatorBrain.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +101,7 @@
 			children = (
 				E20F64711C896E7700C662EE /* AppDelegate.swift */,
 				E20F64731C896E7700C662EE /* ViewController.swift */,
+				E234C23D1CA2A5A4002DC306 /* CalculatorBrain.swift */,
 				E20F64751C896E7700C662EE /* Main.storyboard */,
 				E20F64781C896E7700C662EE /* Assets.xcassets */,
 				E20F647A1C896E7700C662EE /* LaunchScreen.storyboard */,
@@ -259,6 +262,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E234C23E1CA2A5A4002DC306 /* CalculatorBrain.swift in Sources */,
 				E20F64741C896E7700C662EE /* ViewController.swift in Sources */,
 				E20F64721C896E7700C662EE /* AppDelegate.swift in Sources */,
 			);

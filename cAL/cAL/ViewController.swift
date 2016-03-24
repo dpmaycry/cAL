@@ -10,6 +10,7 @@ import UIKit
 
 class ViewController: UIViewController {
     var isUserInMiddleOfTyping = false
+    var brain = CalculatorBrain()
     @IBOutlet weak var display: UILabel!
     
     @IBAction func appendDigit(sender: UIButton) {
@@ -23,47 +24,53 @@ class ViewController: UIViewController {
             isUserInMiddleOfTyping = true
         }
     }
-    var operandStack = Array<Double>()
+//    var operandStack = Array<Double>()
     
     @IBAction func operate(sender: UIButton) {
         let operation = sender.currentTitle!
         if isUserInMiddleOfTyping {
             enter()
         }
-        switch operation  {
-        case "+":
-            performOperation{$0 + $1}
-        case "−":performOperation{$0 - $1}
-//        case "×": performOperation({(op1:Double, op2:Double) -> Double in
-//            return op1 * op2})
-//        case "×": performOperation({(op1, op2) in
-//            return op1 * op2})
-//        case "×": performOperation({(op1, op2) in
-//             op1 * op2})
-//        case "×": performOperation({$0 * $1})
-//            case "×": performOperation(){$0 * $1}
-            case "×": performOperation{$0 * $1}
-        case "÷":performOperation{$1 / $0}
-        case "√": sqrtOperation{sqrt($0)}
-        default: break
+        if let result = brain.preformOperation(operation){
+        displayvalue = result
+        }else{
+        displayvalue = 0
         }
+        
+//        switch operation  {
+//        case "+":
+//            performOperation{$0 + $1}
+//        case "−":performOperation{$1 - $0}
+////        case "×": performOperation({(op1:Double, op2:Double) -> Double in
+////            return op1 * op2})
+////        case "×": performOperation({(op1, op2) in
+////            return op1 * op2})
+////        case "×": performOperation({(op1, op2) in
+////             op1 * op2})
+////        case "×": performOperation({$0 * $1})
+////            case "×": performOperation(){$0 * $1}
+//            case "×": performOperation{$0 * $1}
+//        case "÷":performOperation{$1 / $0}
+//        case "√": sqrtOperation{sqrt($0)}
+//        default: break
+//        }
     }
     
-    func performOperation(operation:(Double, Double) -> Double)
-    {
-        if operandStack.count >= 2 {
-        displayvalue = operation(operandStack.removeLast(), operandStack.removeLast())
-            enter()
-        }
-    }
-    
-    func sqrtOperation(operation: Double -> Double)
-    {
-        if operandStack.count >= 1 {
-            displayvalue = operation(operandStack.removeLast())
-            enter()
-        }
-    }
+//    func performOperation(operation:(Double, Double) -> Double)
+//    {
+//        if operandStack.count >= 2 {
+//        displayvalue = operation(operandStack.removeLast(), operandStack.removeLast())
+//            enter()
+//        }
+//    }
+//    
+//    func sqrtOperation(operation: Double -> Double)
+//    {
+//        if operandStack.count >= 1 {
+//            displayvalue = operation(operandStack.removeLast())
+//            enter()
+//        }
+//    }
     
 //    func multiply(op1:Double, op2:Double) -> Double {
 //    return op1 * op2
@@ -71,8 +78,14 @@ class ViewController: UIViewController {
     
     @IBAction func enter() {
         isUserInMiddleOfTyping = false
-        operandStack.append(displayvalue)
-        print("operandstack:\(operandStack)")
+//        operandStack.append(displayvalue)
+//        print("operandstack:\(operandStack)")
+        if let result = brain.pushOperand(displayvalue)
+        {
+            displayvalue = result
+        }else{
+        displayvalue = 0
+        }
     }
     
     
