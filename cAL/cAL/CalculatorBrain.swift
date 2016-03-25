@@ -63,7 +63,7 @@ class  CalculatorBrain{
     }
 
     func preformOperation(symbol:String) -> Double?
-    {
+    {        
         if let operation = knowOps[symbol]{
         opStack.append(operation)
         }
